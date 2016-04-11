@@ -19,7 +19,6 @@ void ofApp::setup()
     fbo.allocate(ofGetWidth(), ofGetHeight(), GL_RGB);
     pixelSum.allocate(400, 500, OF_IMAGE_COLOR);
     pixelAverage.allocate(400, 500, OF_IMAGE_COLOR);
-    faceVec.resize(60000);
 
 }
 void ofApp::update()
@@ -118,12 +117,6 @@ void ofApp::draw()
 
                 
                 pix.crop(ofGetWidth()/2 - 2 * eyeDistanceConstant, ofGetHeight()/2 - 2 * eyeDistanceConstant, 4 * eyeDistanceConstant, 5 * eyeDistanceConstant);
-                
-                ofColor c = ofColor(pix[0], pix[1],pix[2]);
-                
-                cout << int(c.r) << endl;
-                cout << int(c.g) << endl;
-                cout << int(c.b) << endl;
 
                 numberOfFaces += 1;
                 
